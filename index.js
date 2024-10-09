@@ -68,7 +68,7 @@ class Mocker {
   }
 
   get (params) {
-    const handler = this[kRouter].findRoute(params.method, params.path)
+    const handler = this[kRouter].find(params.method, params.path)
     if (!handler) return null
     for (const { body, querystring, fn } of handler.store) {
       if (body !== undefined && querystring !== undefined) {
